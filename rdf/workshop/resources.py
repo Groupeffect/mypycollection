@@ -10,9 +10,6 @@ class _Nested:
 
 
 class WebResource:
-    webresources = _Nested()
-    webresources.SDO = None
-
     def __init__(self, save: bool = False, file_save_path: str = None, url: str = 'https://schema.org/version/latest/schemaorg-current-https.rdf') -> None:
         self.url = url
         self.file_save_path = file_save_path
@@ -33,7 +30,7 @@ class WebResource:
 
         with open(self.file_save_path, 'w') as f:
             logging.warning(f'saving under {self.file_save_path}')
-            f.write(self.webresource)
+            f.write(self.text)
             f.close()
 
         return self.file_save_path

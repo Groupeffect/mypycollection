@@ -1,12 +1,7 @@
 import logging
 import os
 import requests
-import rdflib as r
 logging.basicConfig(level=logging.DEBUG)
-
-
-class _Nested:
-    pass
 
 
 class WebResource:

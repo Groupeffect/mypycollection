@@ -1,1 +1,5 @@
 schemaorg-current-https.rdf
+node_modules
+site-packages
+.vscode
+dist

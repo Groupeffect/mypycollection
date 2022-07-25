@@ -1,0 +1,13 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+<https://localhost:8000/Account> rdfs:label "Account" ;
+    rdfs:comment "test comment" ;
+    rdfs:subClassOf schema:Person ;
+    schema:domainIncludes <https://localhost:8000/User>,
+        schema:Organization .
+
+<https://localhost:8000/User> rdfs:label "User" ;
+    rdfs:comment "test comment" ;
+    rdfs:subClassOf schema:Person .
+

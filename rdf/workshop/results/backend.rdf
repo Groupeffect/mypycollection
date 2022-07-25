@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema="https://schema.org/"
+>
+  <rdf:Description rdf:about="https://localhost:8000/User">
+    <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
+    <rdfs:comment>test comment</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>User</rdfs:label>
+    <schema:memberOf rdf:resource="https://schema.org/Project"/>
+    <schema:memberOf rdf:resource="https://schema.org/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/Project">
+    <rdfs:label>Project</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/BankAccount">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>BankAccount</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://localhost:8000/Account">
+    <rdfs:comment>test comment</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="https://schema.org/BankAccount"/>
+    <rdfs:label>Account</rdfs:label>
+    <schema:domainIncludes rdf:resource="https://localhost:8000/User"/>
+    <schema:domainIncludes rdf:resource="https://schema.org/Organization"/>
+    <schema:domainIncludes rdf:resource="https://schema.org/Project"/>
+    <schema:ownedFrom rdf:resource="https://localhost:8000/User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Person</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/Organization">
+    <rdfs:label>Organization</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <schema:ownedFrom rdf:resource="https://localhost:8000/User"/>
+  </rdf:Description>
+</rdf:RDF>
